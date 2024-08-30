@@ -11,7 +11,8 @@ export default {
   name: 'App',
   data(){
     return{
-      componenteARenderizar: "e",
+      citas: [],
+
     }
   },
   components: {
