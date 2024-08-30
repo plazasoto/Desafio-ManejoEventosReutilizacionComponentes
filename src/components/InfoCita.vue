@@ -13,10 +13,10 @@
         data(){
             return{
                 cita:{
-                    Paciente:"Juan",
-                    Fecha:"31/31/3131",
-                    Hora:"00:66",
-                    Motivo:"no",
+                    Paciente:"",
+                    Fecha:"",
+                    Hora:"",
+                    Motivo:"",
                 },
             }  
         },
