@@ -1,6 +1,9 @@
 <template>
-  <FormularioCita/>
+  <FormularioCita @agregar-cita="recibirCita"/>
   <InfoCita/>
+  
+  <p v-if="citas.length == 0">Aún no hay consultas registradas</p>
+  <p v-else>Algo</p>
 </template>
 
 <script>
@@ -18,6 +21,14 @@ export default {
   components: {
     FormularioCita,
     InfoCita
+  },
+
+  methods:{
+    recibirCita(citaRecibida){
+      console.log("ᓀ‸ᓂ");
+      console.log(citaRecibida);
+      this.citas.push(citaRecibida);
+    }
   },
 }
 </script>

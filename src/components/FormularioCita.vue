@@ -30,7 +30,7 @@
             <input type="text" id="motivo" v-model="cita.motivo" @change="habilitarBoton()">
         </div>
         <br>
-        <button :disabled="botonDeshabilitado" >Agregar</button>
+        <button :disabled="botonDeshabilitado" @click="agregarCita">Agregar</button>
     </form>
 </template>
 
@@ -61,6 +61,20 @@
                 }else{
                     this.botonDeshabilitado = true;
                 }
+            },
+
+            limpiarFormulario(){
+                this.cita.paciente = "";
+                this.cita.fecha = "";
+                this.cita.hora = "";
+                this.cita.gravedad = "";
+                this.cita.motivo = "";
+            },
+
+            agregarCita(){
+                console.log(this.cita);
+                this.$emit('agregar-cita', structuredClone(this.cita));
+                this.limpiarFormulario();
             },
         }
     };
