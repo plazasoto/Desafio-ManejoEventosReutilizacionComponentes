@@ -12,8 +12,7 @@
 
   </div>
   
-  <p v-if="citas.length == 0">Aún no hay consultas registradas</p>
-  <p v-else>Hay {{citas.length}} citas registradas</p><!-- borrar antes de terminar  -->
+  <p v-if="citas.length == 0" id="sinRegistros">Aún no hay consultas registradas</p>
 </template>
 
 <script>
@@ -35,8 +34,8 @@ export default {
 
   methods:{
     recibirCita(citaRecibida){
-      console.log("ᓀ‸ᓂ");
-      console.log(citaRecibida);
+      /* console.log("ᓀ‸ᓂ");
+      console.log(citaRecibida); */
       this.citas.push(citaRecibida);
     },
   },
@@ -46,5 +45,10 @@ export default {
 <style>
 #citasAgendadas{
   display: inline;
+}
+
+#sinRegistros{
+  color: red;
+  text-align: center;
 }
 </style>
