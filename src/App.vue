@@ -1,9 +1,18 @@
 <template>
   <FormularioCita @agregar-cita="recibirCita"/>
-  <InfoCita/>
+
+  <div id="citasAgendadas" v-for="cita in citas" :key="cita">
+    <InfoCita 
+    :Paciente="cita.paciente"
+    :Fecha="cita.fecha"
+    :Hora="cita.hora"
+    :Motivo="cita.motivo"
+    />
+
+  </div>
   
   <p v-if="citas.length == 0">Aún no hay consultas registradas</p>
-  <p v-else>Algo</p>
+  <p v-else>Hay {{citas.length}} citas registradas</p><!-- borrar antes de terminar  -->
 </template>
 
 <script>

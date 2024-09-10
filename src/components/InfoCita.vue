@@ -1,16 +1,24 @@
 <template>
     <div class="card">
-        <div v-for="(value, key) in cita" :key="value">
+        <!-- <div v-for="(value, key) in cita" :key="value">
             <h4>{{ key }}</h4>
             <p>{{ value }}</p>
-        </div>
+        </div> -->
+        <h4>Paciente</h4>
+        <p>{{ Paciente }}</p>
+        <h4>Fecha</h4>
+        <p>{{ Fecha }}</p>
+        <h4>Hora</h4>
+        <p>{{ Hora }}</p>
+        <h4>Motivo</h4>
+        <p>{{ Motivo }}</p>
         <button>Eliminar</button>
     </div>
 </template>
 
 <script>
     export default{
-        data(){
+        /* data(){
             return{
                 cita:{
                     Paciente:"",
@@ -19,7 +27,13 @@
                     Motivo:"",
                 },
             }  
-        },
+        }, */
+        props: [
+            "Paciente",
+            "Fecha",
+            "Hora",
+            "Motivo"
+        ],
     }
 </script>
 
