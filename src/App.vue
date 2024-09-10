@@ -7,6 +7,7 @@
     :Fecha="cita.fecha"
     :Hora="cita.hora"
     :Motivo="cita.motivo"
+    :Gravedad="cita.gravedad"
     />
 
   </div>
@@ -37,11 +38,13 @@ export default {
       console.log("ᓀ‸ᓂ");
       console.log(citaRecibida);
       this.citas.push(citaRecibida);
-    }
+    },
   },
 }
 </script>
 
 <style>
-
+#citasAgendadas{
+  display: inline;
+}
 </style>
