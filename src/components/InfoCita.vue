@@ -13,22 +13,12 @@
         <p>{{ Hora }}</p>
         <h4>Motivo</h4>
         <p>{{ Motivo }}</p>
-        <button>Eliminar</button>
+        <button @click="borrarCita">Eliminar</button>
     </div>
 </template>
 
 <script>
     export default{
-        /* data(){
-            return{
-                cita:{
-                    Paciente:"",
-                    Fecha:"",
-                    Hora:"",
-                    Motivo:"",
-                },
-            }  
-        }, */
         props: [
             "Paciente",
             "Fecha",
@@ -37,7 +27,9 @@
             "Gravedad"
         ],
         methods:{
-
+            borrarCita(){
+                this.$emit('borrar-cita');
+            },
         },
     }
 </script>

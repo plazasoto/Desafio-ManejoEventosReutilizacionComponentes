@@ -1,13 +1,14 @@
 <template>
   <FormularioCita @agregar-cita="recibirCita"/>
 
-  <div id="citasAgendadas" v-for="cita in citas" :key="cita">
+  <div id="citasAgendadas" v-for="(cita, index) in citas" :key="cita">
     <InfoCita 
     :Paciente="cita.paciente"
     :Fecha="cita.fecha"
     :Hora="cita.hora"
     :Motivo="cita.motivo"
     :Gravedad="cita.gravedad"
+    @borrar-cita="citas.splice(index, 1)"
     />
 
   </div>
