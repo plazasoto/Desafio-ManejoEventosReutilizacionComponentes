@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent="">
+    <form @submit.prevent="" @input="habilitarBoton()">
         <div class="flex">
 
         
@@ -21,7 +21,7 @@
         <div class="inlineblock">
             <label for="gravedad" :class="{ rojo : !cita.gravedad }">Gravedad</label>
             <br>
-            <select name="gravedad" id="gravedad" v-model="cita.gravedad">
+            <select name="gravedad" id="gravedad" v-model="cita.gravedad" @change="habilitarBoton()">
                 <option value="baja">Baja</option>
                 <option value="media">Media</option>
                 <option value="alta">Alta</option>
@@ -30,7 +30,7 @@
         <div class="inlineblock">
             <label for="motivo" :class="{ rojo : !cita.motivo }">Motivo</label>
             <br>
-            <input type="text" id="motivo" v-model="cita.motivo" @change="habilitarBoton()">
+            <input type="text" id="motivo" v-model="cita.motivo" >
         </div>
 
 
@@ -58,7 +58,7 @@
             }
         },
         methods:{
-            habilitarBoton(){// meh 
+            habilitarBoton(){
                 if(
                     this.cita.paciente &&
                     this.cita.fecha &&
@@ -84,6 +84,7 @@
                 console.log(this.cita);
                 this.$emit('agregar-cita', structuredClone(this.cita));
                 this.limpiarFormulario();
+                this.habilitarBoton();
             },
         }
     };
