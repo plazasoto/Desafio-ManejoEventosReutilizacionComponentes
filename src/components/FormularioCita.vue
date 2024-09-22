@@ -37,7 +37,12 @@
         </div>
         <div class="flex">
 
-            <button :disabled="botonDeshabilitado" @click="agregarCita" >Agregar</button>
+            <button 
+            :disabled="botonDeshabilitado" 
+            @click="agregarCita" 
+            :style="{ cursor: botonDeshabilitado ? 'not-allowed' : 'pointer'}" >
+                Agregar
+            </button>
         </div>
         
     </form>
@@ -81,7 +86,7 @@
             },
 
             agregarCita(){
-                console.log(this.cita);
+                //console.log(this.cita);
                 this.$emit('agregar-cita', structuredClone(this.cita));
                 this.limpiarFormulario();
                 this.habilitarBoton();
